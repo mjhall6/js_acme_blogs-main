@@ -544,8 +544,8 @@ function initApp(){
 }
 
 
-/*
-NOTE: There is one last step to get your app to function correctly. 
+
+/*NOTE: There is one last step to get your app to function correctly. 
 I cannot test for this, but you
 must apply it to call the script into action.
 *** This must be underneath the definition of initApp in your file.
@@ -553,4 +553,4 @@ must apply it to call the script into action.
 2. Listen for the “DOMContentLoaded” event.
 3. Put initApp in the listener as the event handler function.
 4. This will call initApp after the DOM content 
-has loaded and your app will be started */
+has loaded and your app will be started.*/
