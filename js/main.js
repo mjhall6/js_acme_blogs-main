@@ -113,10 +113,12 @@ function deleteChildElements(parentElement) {
     if(!parentElement?.lastElementChild) return;
     
     let child = parentElement.lastElementChild;
+    
     while(child){
       parentElement.removeChild(child);
       child = parentElement.lastElementChild;
     }
+
     return parentElement;
 }
 
@@ -192,12 +194,11 @@ k. Append the article element to the fragment
 l. Return the fragment element
 */
 
-function createComments(comment) {
-    if(!comment){
-         return undefined;
-     }
+function createComments(comments) {
+    if(!comments) return;
      let fragment = document.createDocumentFragment();
-     for(let i = 0; i < comment.length; i++){
+     for(let i = 0; i < comments.length; i++){
+        //let comment = comments[i];
          let article = document.createElement("article");
          let h3 = createElemWithText('h3', comment.name);
          let p1 = createElemWithText('p', comment.body);
@@ -404,8 +405,8 @@ const createPosts= async (posts) => {
         article.append(section);
         fragment.append(article);
     }
-    return fragment;
-}*/
+    return fragment;*/
+}
 
 /*
 16. displayPosts
