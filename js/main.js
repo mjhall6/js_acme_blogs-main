@@ -526,7 +526,11 @@ h. Return an array with users JSON data from getUsers and the select element
 result from populateSelectMenu: [users, select]
 */
 
-function initPage(){}
+const initPage = async () => {
+    let users = await getUsers();
+    let select = populateSelectMenu(users);
+    return[users,select];
+}
 
 /*
 initApp
@@ -540,8 +544,13 @@ f. NOTE: All of the above needs to be correct for you app to function correctly.
 However, I can only test if the initApp function exists. It does not return anything.
 */
 
-function initApp(){
+const initApp = async () => {
+    initPage();
+    let select = document.getElementById("selectMenu");
+    select.addEventListener("change", selectMenuChangeEventHandler, false);
 }
+
+document.addEventListener("DOMContentLoaded", initApp, false);
 
 
 
